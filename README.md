@@ -1,93 +1,72 @@
 Customer Churn Prediction
-A machine learning project to predict customer churn for a telecom company, featuring a user-friendly Streamlit web application with interactive prediction and data analysis dashboards.
 
-🚀 Overview
-Customer churn is when a customer stops using a company’s service. Predicting churn helps businesses proactively retain customers and reduce revenue loss.
-This project uses real-world telecom data, robust preprocessing, class balancing (SMOTE), and a Random Forest model to predict churn. The deployed Streamlit app allows both business users and data scientists to interactively assess churn risk and explore key patterns.
+    This project predicts customer churn for a telecom company using machine learning and provides an interactive Streamlit web app for predictions and data analysis.
 
-📂 Project Structure
-text
-├── app.py                 # Streamlit web app (prediction + analysis)
-├── train_model.py         # Model training and preprocessing pipeline
-├── churn_model.pkl        # Saved trained model
-├── preprocessor.pkl       # Saved preprocessing objects (label encoders, etc.)
-├── WA_Fn-UseC_-Telco-Customer-Churn.csv  # Dataset
-├── requirements.txt       # Python dependencies
-└── README.md              # This file
-📝 Dataset
-Source: WA_Fn-UseC_-Telco-Customer-Churn.csv
+Overview
+  
+    Customer churn refers to customers leaving a service. Predicting churn helps businesses retain customers and reduce revenue loss.
+    This project uses a real-world telecom dataset, applies preprocessing and class balancing, trains a Random Forest model, and deploys the solution as a web application.
 
-Rows: 7,043 customers
+Project Structure
 
-Columns: 21 features including demographics, contract info, service usage, and churn label.
+    text
+      app.py                   # Streamlit web app (prediction and analysis)
+      train_model.py           # Model training and preprocessing
+      churn_model.pkl          # Saved trained model
+      preprocessor.pkl         # Saved preprocessing objects
+      WA_Fn-UseC_-Telco-Customer-Churn.csv  # Dataset
+      requirements.txt         # Python dependencies
+      README.md                # Project documentation
+      
+    Dataset
+      File: WA_Fn-UseC_-Telco-Customer-Churn.csv
+  
+    Rows: 7,043 customers
+    
+    Columns: 21 features (demographics, contract info, service usage, churn label)
 
-🛠️ Features
-Data Cleaning: Handles missing values, converts data types, drops irrelevant columns.
+Features
 
-Feature Engineering: Label encoding for categorical variables.
+    Data cleaning and preprocessing (handle missing values, encode categorical variables)
+    Class balancing using SMOTE
+    Model training (Decision Tree, Random Forest, XGBoost)
+    Model evaluation (accuracy, precision, recall, F1-score, confusion matrix)
+    Deployment as a Streamlit web app
+    Prediction page: Input customer details, get churn risk and probability
+    Data analysis page: Interactive filters and visualizations
 
-Class Imbalance Handling: SMOTE oversampling for minority class (churners).
+How to Run
 
-Modeling: Decision Tree, Random Forest, and XGBoost; Random Forest selected for best performance.
+  Install dependencies:
 
-Evaluation: Precision, recall, F1-score, confusion matrix, and business-focused metrics.
+    text
+    pip install -r requirements.txt
+    Train the model (if not already trained):
+    
+    text
+    python train_model.py
+    Run the Streamlit app:
+    
+    text
+    streamlit run app.py
+    Open your browser to http://localhost:8501
 
-Deployment: Streamlit app with:
+App Functionality
 
-Churn Prediction: Enter customer details, get risk assessment, probabilities, and a gauge visualization.
+    Predict Churn: Enter customer features, get churn prediction and probability.
+    
+    Data Analysis: Filter and visualize churn distribution, average charges by tenure, churn rate by contract, and more.
 
-Data Analysis: Interactive filters, churn distribution, average charges by tenure group, and churn rate by contract.
+Key Concepts
 
-🖥️ How to Run
-Clone the repository and install dependencies:
+    SMOTE: Oversampling technique to balance the dataset.
+    
+    Random Forest: Chosen for best performance and robustness.
+    
+    Label Encoding: Converts categorical features to numeric.
+    
+    Streamlit: Framework for building interactive Python web apps.
 
-bash
-pip install -r requirements.txt
-Train the model (if not already trained):
+Author
 
-bash
-python train_model.py
-Run the Streamlit app:
-
-bash
-streamlit run app.py
-Open your browser to http://localhost:8501
-
-📊 App Demo
-Predict Churn:
-Input customer features, get instant churn prediction, probability, and a color-coded risk gauge.
-
-Data Analysis:
-Explore churn patterns with interactive filters and business-friendly charts (pie, bar, etc.).
-
-🔑 Key Concepts
-SMOTE: Synthetic oversampling to balance churn/no-churn classes.
-
-Random Forest: Chosen for its accuracy and robustness on tabular data.
-
-Label Encoding: Ensures categorical features are model-ready and consistent at inference.
-
-Streamlit: Enables rapid web deployment for ML models and dashboards.
-
-📈 Example Visualizations
-Churn Distribution Pie Chart
-
-Average Monthly Charges by Tenure Group (Bar Chart)
-
-Churn Rate by Contract Type (Bar Chart)
-
-Interactive risk gauge for prediction
-
-🧑‍💻 Author
-Ketki Dighe
-
-📄 License
-This project is for educational and demonstration purposes.
-
-References:
-
-CustomerChurnPrediction.ipynb
-
-WA_Fn-UseC_-Telco-Customer-Churn.csv
-
-Streamlit Documentation
+    Ketki Dighe
